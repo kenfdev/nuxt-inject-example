@@ -1,7 +1,7 @@
 import { GetterTree, ActionTree, MutationTree } from 'vuex';
 import { Dependencies } from '~/plugins/dependencies';
 
-interface State {
+export interface State {
   loading: boolean;
   count: number;
 }

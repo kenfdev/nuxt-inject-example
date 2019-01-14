@@ -9,7 +9,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "test": "jest --config jest.config.js"
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.0",
@@ -18,12 +19,20 @@
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.12",
     "@types/node": "^10.12.18",
+    "@vue/test-utils": "^1.0.0-beta.28",
+    "babel-jest": "^23.6.0",
+    "babel-preset-vue-app": "^2.0.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "2.6.2",
+    "jest": "^23.6.0",
+    "lodash": "^4.17.11",
     "nodemon": "^1.11.0",
     "prettier": "1.14.3",
+    "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.3",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "vue-jest": "^3.0.2"
   }
 }
