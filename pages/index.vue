@@ -1,39 +1,51 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+      <logo />
       <h1 class="title">
         nuxt-inject-example
       </h1>
-      <h2 class="subtitle">
-        My top-notch Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+      <div>
+        <div class="tags has-addons">
+          <span class="tag is-primary">Vue.js+Nuxt.js</span>
+          <span class="tag">{{ count }} stars</span>
+        </div>
+        <a class="button"
+           :class="{'is-loading': loading}"
+           @click="onLoad">Load</a>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { mapGetters } from 'vuex';
+import Logo from '~/components/Logo.vue';
+
+import { actionTypes } from '~/store';
 
 export default {
   components: {
-    Logo
-  }
-}
+    Logo,
+  },
+  computed: {
+    ...mapGetters(['loading', 'count']),
+  },
+  async fetch(context) {
+    return context.store.dispatch(actionTypes.FETCH_GITHUB_STARS);
+  },
+  methods: {
+    onLoad() {
+      this.$store.dispatch(actionTypes.FETCH_GITHUB_STARS);
+    },
+  },
+};
 </script>
 
 <style>
-
+.tags.has-addons {
+  justify-content: center;
+}
 .container {
   min-height: 100vh;
   display: flex;
