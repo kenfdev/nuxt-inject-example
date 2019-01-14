@@ -8,7 +8,7 @@
       <div>
         <div class="tags has-addons">
           <span class="tag is-primary">Vue.js+Nuxt.js</span>
-          <span class="tag">{{ count }} stars</span>
+          <span class="tag">{{ countResult }}</span>
         </div>
         <a class="button"
            :class="{'is-loading': loading}"
@@ -29,7 +29,7 @@ export default {
     Logo,
   },
   computed: {
-    ...mapGetters(['loading', 'count']),
+    ...mapGetters(['loading', 'countResult']),
   },
   async fetch(context) {
     return context.store.dispatch(actionTypes.FETCH_GITHUB_STARS);

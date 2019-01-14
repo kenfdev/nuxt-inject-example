@@ -24,13 +24,17 @@ export const getters: GetterTree<State, State> = {
   loading(state) {
     return state.loading;
   },
-  count(state) {
-    return state.count;
+  countResult(state) {
+    if (state.loading) {
+      return '-';
+    }
+
+    return `${state.count} stars`;
   },
 };
 
 export const actions: ActionTree<State, State> = {
-  async [actionTypes.FETCH_GITHUB_STARS]({ commit }, repos: string[]) {
+  async [actionTypes.FETCH_GITHUB_STARS]({ commit }) {
     const { gitGateway } = this.$deps as Dependencies;
 
     commit(mutationTypes.SET_LOADING, true);

@@ -5,15 +5,17 @@
   "author": "Ken Fukuyama",
   "private": true,
   "scripts": {
+    "offline": "NODE_ENV=offline nuxt",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/bulma": "^1.2.0",
+    "axios": "^0.18.0",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0",
-    "@nuxtjs/bulma": "^1.2.0"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",

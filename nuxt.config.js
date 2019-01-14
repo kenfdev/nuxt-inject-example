@@ -1,7 +1,13 @@
-const pkg = require('./package')
+const pkg = require('./package');
+
+const environment = process.env.NODE_ENV || 'development';
 
 module.exports = {
   mode: 'universal',
+
+  env: {
+    environment,
+  },
 
   /*
   ** Headers of the page
@@ -11,9 +17,9 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   /*
@@ -38,7 +44,7 @@ module.exports = {
     ,
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
-    '~/modules/typescript.js'
+    '~/modules/typescript.js',
   ],
 
   /*
@@ -48,13 +54,13 @@ module.exports = {
     postcss: {
       preset: {
         features: {
-          customProperties: false
-        }
-      }
+          customProperties: false,
+        },
+      },
     },
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {}
-  }
-}
+    extend(config, ctx) {},
+  },
+};
