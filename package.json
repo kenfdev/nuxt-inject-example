@@ -1,0 +1,27 @@
+{
+  "name": "nuxt-inject-example",
+  "version": "1.0.0",
+  "description": "My top-notch Nuxt.js project",
+  "author": "Ken Fukuyama",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "@nuxtjs/bulma": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "nodemon": "^1.11.0",
+    "prettier": "1.14.3",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.2"
+  }
+}
