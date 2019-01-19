@@ -32,7 +32,7 @@ export default {
     ...mapGetters(['loading', 'countResult']),
   },
   async fetch(context) {
-    console.log('fetch: ', context);
+    console.log('fetch: ', context.app);
     return context.store.dispatch(actionTypes.FETCH_GITHUB_STARS);
   },
   methods: {

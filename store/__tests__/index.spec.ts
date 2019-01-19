@@ -36,7 +36,7 @@ describe('store/index.js', () => {
       // Act
       await store.dispatch(index.actionTypes.FETCH_GITHUB_STARS);
       // Assert
-      expect(state.count).toEqual(expectedCount);
+      expect(store.getters.countResult).toEqual(`${expectedCount} stars`);
     });
   });
 });
