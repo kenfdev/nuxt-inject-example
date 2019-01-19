@@ -10,7 +10,7 @@
           <span class="tag is-primary">Vue.js+Nuxt.js</span>
           <span class="tag">{{ countResult }}</span>
         </div>
-        <a class="button"
+        <a class="button is-large"
            :class="{'is-loading': loading}"
            @click="onLoad">Load</a>
       </div>
@@ -32,10 +32,12 @@ export default {
     ...mapGetters(['loading', 'countResult']),
   },
   async fetch(context) {
+    console.log('fetch: ', context);
     return context.store.dispatch(actionTypes.FETCH_GITHUB_STARS);
   },
   methods: {
     onLoad() {
+      console.log('onLoad: ', this);
       this.$store.dispatch(actionTypes.FETCH_GITHUB_STARS);
     },
   },
@@ -43,6 +45,10 @@ export default {
 </script>
 
 <style>
+.tags .tag {
+  font-size: 3rem;
+  height: 3em;
+}
 .tags.has-addons {
   justify-content: center;
 }

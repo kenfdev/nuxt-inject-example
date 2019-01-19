@@ -8,9 +8,6 @@ export interface Dependencies {
   gitGateway: IGitGateway;
 }
 
-/**
- * Serviceの初期化とappまたはcontextに$depsとしてinjectする
- */
 export default (context, inject) => {
   const environment = process.env.environment || 'development';
 

@@ -14,7 +14,7 @@ const MockGitGateway = jest.fn<IGitGateway>().mockImplementation(() => {
 });
 
 describe('store/index.js', () => {
-  let store;
+  let store: Store<index.State>;
   let state: index.State;
   let gitGateway: jest.Mocked<IGitGateway>;
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('store/index.js', () => {
     const deps = {
       gitGateway,
     };
-    (store as any).$deps = deps;
+    store['$deps'] = deps;
     state = store.state;
   });
 
